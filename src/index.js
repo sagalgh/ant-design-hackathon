@@ -1,11 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import SignIn from './SignIn';
+import App from './App';
+import Success from './Success'
+import ForgotPassword from './ForgotPassword'
 
 ReactDOM.render(
-  <App />,
+  <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="success" element={<Success />} />
+        </Routes>
+      </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
